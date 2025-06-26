@@ -41,12 +41,15 @@ export class HeaderComponent {
   open() {
     this.isVisible.set(true);
   }
+  close() {
+    this.isVisible.set(false);
+  }
 
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent) {
     const target = event.target as HTMLElement;
     if (!target.closest('.click')) {
-      this.isVisible.set(false);
+      this.close();
     }
   }
 }

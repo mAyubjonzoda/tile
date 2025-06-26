@@ -15,7 +15,7 @@
 
     <span class="header-search click" [class.visible]="isVisible()">
       @if (isVisible()) {
-      <button class="header-btn search-btn">
+      <button class="header-btn search-btn" (click)="close()">
         <svg icon="arrow" class="header-nav__icon"></svg>
       </button>
       }

@@ -1,0 +1,52 @@
+<header class="header">
+  <div class="header-logo">
+    <svg icon="logo" class="header-logo-icon"></svg>
+  </div>
+
+  <nav class="header-nav__wrapper">
+    <div class="header-nav mobile-none">
+      @for (item of headerItems; track $index) {
+      <a [href]="item.link" class="header-nav__link">
+        <svg [icon]="item.icon" class="header-nav__icon"></svg>
+        {{ item.text }}
+      </a>
+      }
+    </div>
+
+    <span class="header-search click" [class.visible]="isVisible()">
+      @if (isVisible()) {
+      <button class="header-btn search-btn">
+        <svg icon="arrow" class="header-nav__icon"></svg>
+      </button>
+      }
+
+      <input
+        type="text"
+        class="header-search-input click"
+        placeholder="Поиск"
+        [class.visible]="isVisible()"
+      />
+    </span>
+
+    <div class="header-btns__wrapper">
+      <button class="header-btn click" (click)="open()">
+        <svg icon="search" class="header-nav__icon"></svg>
+      </button>
+      <a href="#" class="history-link">
+        <svg icon="history" class="header-nav__icon"></svg>
+      </a>
+      <button class="header-btn">
+        <svg icon="plus" class="header-nav__icon"></svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="header-user">
+    <button class="header-btn">
+      <svg icon="notifications" class="header-nav__icon"></svg>
+    </button>
+    <button class="header-btn mobile-none">
+      <img src="assets/imgs/ava.png" alt="" class="header-nav__img" />
+    </button>
+  </div>
+</header>

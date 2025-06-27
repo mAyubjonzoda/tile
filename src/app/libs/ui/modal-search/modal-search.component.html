@@ -1,0 +1,18 @@
+<div class="history-item__wrapper">
+  <h1 class="history-item__title">История</h1>
+
+  <div class="history-item__block">
+    @for (item of itemsArray; track $index) {
+    <div class="history-item">{{ item }}</div>
+    }
+  </div>
+</div>
+<div class="author-item">
+  <div class="input-group">
+    <label class="floating-label">Автор</label>
+    <div class="input-wrapper">
+      <input type="text" placeholder="Имя или должность" />
+      <button class="input-btn">Я</button>
+    </div>
+  </div>
+</div>

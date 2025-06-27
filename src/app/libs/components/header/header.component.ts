@@ -1,9 +1,10 @@
 import { Component, HostListener, signal } from '@angular/core';
 import { SvgIconComponent } from '../../ui/svg-icon/svg-icon.component';
+import { ModalSearchComponent } from '../../ui/modal-search/modal-search.component';
 
 @Component({
   selector: 'app-header',
-  imports: [SvgIconComponent],
+  imports: [SvgIconComponent, ModalSearchComponent],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
@@ -37,12 +38,22 @@ export class HeaderComponent {
   ];
 
   isVisible = signal<boolean>(false);
+  modal = signal<boolean>(false);
+
+  showModal() {
+    this.modal.set(true);
+  }
+
+  hideModal() {
+    this.modal.set(false);
+  }
 
   open() {
     this.isVisible.set(true);
   }
   close() {
     this.isVisible.set(false);
+    this.modal.set(false);
   }
 
   @HostListener('document:click', ['$event'])
@@ -50,6 +61,7 @@ export class HeaderComponent {
     const target = event.target as HTMLElement;
     if (!target.closest('.click')) {
       this.close();
+      this.hideModal();
     }
   }
 }

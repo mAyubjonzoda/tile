@@ -15,4 +15,24 @@
       <button class="input-btn">Я</button>
     </div>
   </div>
+  <div class="checkbox__wrapper">
+    @for (i of firstCheckbox; track $index) {
+    <div class="checkbox-item">
+      <input type="checkbox" class="checkbox" />
+      <label>{{ i }}</label>
+    </div>
+    }
+  </div>
+
+  <div class="second-checkbox">
+    <span class="second-checkbox__title">Только</span>
+    <div class="checkbox__wrapper">
+      @for (i of secondCheckbox; track $index) {
+      <div class="checkbox-item">
+        <input type="checkbox" class="checkbox" />
+        <label>{{ i }}</label>
+      </div>
+      }
+    </div>
+  </div>
 </div>

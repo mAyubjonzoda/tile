@@ -15,4 +15,7 @@ export class ModalSearchComponent {
     'текстовое поле',
     'выпадающий список',
   ];
+
+  firstCheckbox: string[] = ['Я участник', 'Строгий поиск', 'В заголовках'];
+  secondCheckbox: string[] = ['Теги', 'Просьбы', 'Контакты'];
 }
